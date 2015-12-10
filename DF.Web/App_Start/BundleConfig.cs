@@ -14,6 +14,7 @@ namespace DF.Web
             bundles.Add(new StyleBundle("~/styles")
                 .Include(
                     "~/Content/bootstrap.css",
+                    "~/black-tie/css/black-tie.css",
                     "~/Content/site.css"
                 )
                 );
@@ -21,30 +22,17 @@ namespace DF.Web
             // Angular Modules
             bundles.Add(new ScriptBundle("~/scripts/g")
                 .Include(
-                    "~/Scripts/jquery-1.9.1.min",
+                    "~/Scripts/jquery-1.9.1.min.js",
                     "~/Scripts/angular.js",
                     "~/Scripts/angular-touch.js",
                     "~/Scripts/angular-cookies.js",
                     "~/Scripts/angular-resource.js",
                     "~/Scripts/angular-sanitize.js",
-                    "~/Scripts/angular-ui-router.js"
+                    "~/Scripts/angular-ui-router.js",
+                    "~/Scripts/bootstrap.js",
+                    "~/Scripts/ui-bootstrap-tpls-0.13.0.js"
                 )
                 );
-
-            bundles.Add(new ScriptBundle("~/scripts/app")
-                .Include(
-                    "~/app/app.js",
-                    "~/app/config.js",
-                    "~/app/modules.js",
-                    "~/app/core/*.js"
-                )
-                );
-
-            //bundles.Add(new ScriptBundle("~/scripts/kendo")
-            //   .Include(
-            //       //"~/Scripts/kendo/kendo.all.min.js"
-            //   )
-            //   );
         }
     }
 }

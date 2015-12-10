@@ -1,2 +1,390 @@
 ﻿body {
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    background-color: #EDEFED; 
+}
+
+.main-head {
+    background: url(../images/main.jpg);
+    background-size: cover;
+    height: 350px;
+    top: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.sub-head {
+    background: url(../images/main.jpg);
+    background-size: cover;
+    height: 200px;
+    top: 0;
+    width: 100%;
+    position: absolute;
+}
+
+.spacer {
+    height: 130px;
+}
+.sub-content {
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+}
+
+.head-content {
+    color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+}
+
+.head-content h1 {
+    font-size: 40px;
+}
+
+.main-search {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.main-search .btn {
+    border: 0;
+    font-size: 18px;
+    padding: 8px 20px;
+}
+.main-search .form-control {
+    border: 0;
+    font-size: 18px;
+    padding: 20px 20px;
+}
+
+.nav-icon {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.top-ad {
+    background-color: #fff;
+}
+
+.top-ad-content {
+    padding: 30px;
+}
+.container {
+    padding: 30px;
+}
+
+.top-ad-bkg {
+    background: url(../images/hotel.jpg);
+    height: 220px;
+    background-size: cover;
+}
+
+.btn {
+    border: 0;
+    font-size: 16px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    padding: 10px 30px;
+}
+
+.btn-success {
+    background-color: #2ECC71;
+}
+h2 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    color: #2C3E50;
+}
+h3 {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    color: #34495E;
+}
+.widget {
+    text-align: center;
+    width: 100%;
+}
+
+.deal-cat-box {
+    text-align: center;
+    width: 240px;
+    height: 240px;
+        display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dining {
+    background: url(../images/dining.jpg);
+    background-size: cover;
+}
+
+.spa {
+    background: url(../images/spa.jpg);
+    background-size: cover;
+
+}
+
+.fashion {
+    background: url(../images/fashion.png);
+    background-size: cover;
+
+}
+
+.happyhour {
+    background: url(../images/happyhour.jpg);
+    background-size: cover;
+
+}
+
+.home {
+    background: url(../images/home.jpg);
+    background-size: cover;
+
+}
+
+.other {
+    background: url(../images/other.jpg);
+    background-size: cover;
+
+}
+
+.travel {
+    background: url(../images/travel.jpg);
+    background-size: cover;
+
+}
+
+.acco {
+    background: url(../images/acco.jpg);
+    background-size: cover;
+
+}
+.margin-right {
+    margin-right: 30px;
+}
+
+.navbar {
+    z-index: 999999;
+}
+
+.deal {
+    background-color: red;
+    color: #fff;
+    padding: 10px;
+    padding-right: 4px;
+    font-weight: bold; 
+}
+
+.finder {
+    background-color: #fff;
+    padding: 10px;
+    padding-left: 3px;
+    color: #000;
+    font-weight: bold; 
+}
+
+
+footer {
+    background-color: #34495E;
+    color: #fff;
+    padding: 40px;
+}
+
+footer ul { padding-left: 0; }
+
+a:active,
+a:hover,
+a:visited,
+footer a { text-decoration: none; }
+
+footer a:link { color: #fff; }
+
+footer a:visited { color: #fff; }
+
+footer a:active { color: #fff; }
+
+footer a:hover { color: #fff; }
+
+footer ul li {
+    color: #fff;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+footer ul li a:visited { color: #fff; }
+
+footer ul li a:active { color: #fff; }
+
+footer ul li a:hover { color: #fff; }
+
+footer ul li a:link { color: #fff; }
+
+.cat-menu {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    background-color: #fff;
+}
+
+
+.nav {
+    color: #8090a1;
+}
+
+.nav-tabs {
+    border-bottom: 0;
+}
+
+.nav-tabs li {
+    padding: 0 25px 15px 25px;
+    cursor: pointer;
+}
+
+.nav-tabs li a:link,
+.nav-tabs li a:hover,
+.nav-tabs li a:visited,
+.nav-tabs li a:active {
+    padding: 0;
+    border: 0;
+    color: #000;
+    background-color: transparent;
+    margin: 0;
+    cursor: pointer;
+}
+
+.head-tab-active {
+    padding: 0 25px 0 25px;
+    color: #000;
+    border-bottom: 4px solid red;
+    font-weight: 500;
+}
+
+.nav-tabs li a:hover {
+    border-radius: 0;
+}
+
+.nav-tabs ul {
+    padding-right: 30px;
+}
+
+.deals-ul ul {
+   margin: 0; 
+    padding: 0;
+    font-size: 14px;
+    list-style-type: none;
+}
+
+.deal-row {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.deal-row-desc {
+    color: #888;
+}
+.page .btn {
+    padding: 7px 15px;
+    font-size: 14px;
+}
+
+.deal-box {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.most-viewed {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.vendor-short-profile {
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.vendor-short-background {
+    background: url(../images/pizza.jpg);
+    background-size: cover;
+    padding: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.vendor-short-desc {
+    padding: 20px;
+    font-size: 12px;
+    color: #888;
+}
+
+.vendor-count {
+    color: #3498DB;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.vendor-follow .btn {
+    
+}
+
+.icon {
+    margin-right: 7px;
+}
+
+.btn-info {
+    background-color: #3498DB;
+}
+
+.green {
+    color: #2ECC71;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+.todo-bar {
+    color: #fff;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.todo-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.todo-bar ul li { 
+    display: inline;
+    margin-right: 10px;
+}
+
+.todo-bar ul li a {
+    color: #fff;
+}
+.pink {
+    color: #ff3d4d;
+}
+
+.timestamp {
+    padding: 10px 0;
+    color: #888;
+}
+.orange {
+    color: #F39C12;
 }

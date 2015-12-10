@@ -1,0 +1,157 @@
+﻿@using System.Web.Optimization
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/styles")
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><span class="deal">DealFinder</span><span class="finder">.lk</span></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                @Html.Partial("_Nav")
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+<div class="main-head">
+    <div class="head-content">
+        <h1>One site for all the deals.</h1>
+        <br/>
+        <div class="main-search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                        <button class="btn btn-success" type="button">Search</button>
+                    </span>
+            </div>
+        </div>
+        <div class="todo-bar">
+            <i>search for:</i>
+            <ul>
+                <li><a href="/search?q=pizza">pizza</a></li>
+                <li><a href="/search?q=coffee">coffee</a></li>
+                <li><a href="/search?q=ipad">ipad</a></li>
+                <li><a href="/search?q=mobile">mobile</a></li>
+                <li><a href="/search?q=laptops">laptops</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br/>
+    <div class="container">
+        <div class="widget">
+            <h2>Just for the weekend</h2>
+            <h3>Discover deals for your weekend</h3>
+            <br/><br/>
+            <div class="row">
+                <a href="/category/dining">
+                    <div class="col-md-3 col-centered">
+                        <div class="deal-cat-box dining">
+                            Dining
+                        </div>
+                    </div>
+                </a>
+                <a href="/category/happy-hour">
+                    <div class="col-md-3 ">
+                        <div class="deal-cat-box happyhour margin-right">
+                            Happy Hour
+                        </div>
+                    </div>
+                </a>
+                <a href="/category/health-beauty">
+
+                    <div class="col-md-3 ">
+                        <div class="deal-cat-box spa margin-right">
+                            Health & Beauty
+
+                        </div>
+                    </div>
+                </a>
+                <a href="/category/fashion">
+
+                    <div class="col-md-3">
+                        <div class="deal-cat-box fashion">
+                            Fashion
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+            <br />
+            <br />
+
+            <h2>Explore for more</h2>
+            <h3>See all our deals</h3>
+            <br/><br/>
+            <div class="row">
+                <a href="/category/accomodation">
+                    <div class="col-md-3">
+                        <div class="deal-cat-box acco margin-right">
+                            Accomodation
+                        </div>
+                    </div>
+                </a>
+                <a href="/category/travel-leisure">
+                    <div class="col-md-3">
+                        <div class="deal-cat-box travel margin-right">
+                            Travel & Leisure
+                        </div>
+                    </div>
+                </a>
+                <a href="/category/home-essentials">
+                    <div class="col-md-3">
+                        <div class="deal-cat-box home margin-right">
+                            Home Essentials
+                        </div>
+                    </div>
+                </a>
+                <a href="/category/other">
+                    <div class="col-md-3">
+                        <div class="deal-cat-box other">
+                            Other
+                        </div>
+                    </div>
+                </a>
+</div>
+        </div>
+        <br />
+        <br/>
+        @Html.Partial("_TopAd")
+        <br />
+        <br />
+        <br/>
+    </div>
+    @Html.Partial("_Footer")
+    @Scripts.Render("~/scripts/g")
+</body>
+</html>

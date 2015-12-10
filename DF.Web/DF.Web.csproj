@@ -43,6 +43,14 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -147,12 +155,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="black-tie\css\black-tie.css" />
+    <Content Include="black-tie\css\black-tie.min.css" />
+    <Content Include="black-tie\documentation\assets\css\prettify.css" />
+    <Content Include="black-tie\documentation\assets\css\pygments.css" />
+    <Content Include="black-tie\documentation\assets\css\site.css" />
+    <Content Include="black-tie\documentation\assets\ico\favicon.ico" />
+    <Content Include="black-tie\documentation\assets\js\prettify.min.js" />
+    <Content Include="black-tie\documentation\assets\js\site.js" />
+    <Content Include="black-tie\documentation\regular.html" />
+    <Content Include="black-tie\fonts\brands\FontAwesomeBrands-Regular-webfont.svg" />
+    <Content Include="black-tie\fonts\regular\BlackTie-Regular-webfont.svg" />
+    <Content Include="black-tie\license.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\site.css" />
+    <Content Include="fonts\flaticons-stroke.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\regular\BlackTie-Regular-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -160,6 +183,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="images\acco.jpg" />
+    <Content Include="images\dining.jpg" />
+    <Content Include="images\fashion.png" />
+    <Content Include="images\happyhour.jpg" />
+    <Content Include="images\home.jpg" />
+    <Content Include="images\hotel.jpg" />
+    <Content Include="images\main.jpg" />
+    <Content Include="images\other.jpg" />
+    <Content Include="images\pizza.jpg" />
+    <Content Include="images\spa.jpg" />
+    <Content Include="images\travel.jpg" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -198,6 +232,56 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="black-tie\fonts\brands\FontAwesomeBrands-Regular-webfont.eot" />
+    <Content Include="black-tie\fonts\brands\FontAwesomeBrands-Regular-webfont.ttf" />
+    <Content Include="black-tie\fonts\brands\FontAwesomeBrands-Regular-webfont.woff" />
+    <Content Include="black-tie\fonts\brands\FontAwesomeBrands-Regular-webfont.woff2" />
+    <Content Include="black-tie\fonts\brands\FontAwesomeBrands-Regular.otf" />
+    <Content Include="black-tie\fonts\regular\BlackTie-Regular-webfont.eot" />
+    <Content Include="black-tie\fonts\regular\BlackTie-Regular-webfont.ttf" />
+    <Content Include="black-tie\fonts\regular\BlackTie-Regular-webfont.woff" />
+    <Content Include="black-tie\fonts\regular\BlackTie-Regular-webfont.woff2" />
+    <Content Include="black-tie\fonts\regular\BlackTie-Regular.otf" />
+    <Content Include="black-tie\less\animated.less" />
+    <Content Include="black-tie\less\black-tie.less" />
+    <Content Include="black-tie\less\bordered-pulled.less" />
+    <Content Include="black-tie\less\core.less" />
+    <Content Include="black-tie\less\fixed-width.less" />
+    <Content Include="black-tie\less\icons.less" />
+    <Content Include="black-tie\less\list.less" />
+    <Content Include="black-tie\less\mixins.less" />
+    <Content Include="black-tie\less\path.less" />
+    <Content Include="black-tie\less\rotated-flipped.less" />
+    <Content Include="black-tie\less\sizes.less" />
+    <Content Include="black-tie\less\stacked.less" />
+    <Content Include="black-tie\less\variables.less" />
+    <Content Include="black-tie\scss\black-tie.scss" />
+    <Content Include="black-tie\scss\_animated.scss" />
+    <Content Include="black-tie\scss\_bordered-pulled.scss" />
+    <Content Include="black-tie\scss\_core.scss" />
+    <Content Include="black-tie\scss\_fixed-width.scss" />
+    <Content Include="black-tie\scss\_icons.scss" />
+    <Content Include="black-tie\scss\_list.scss" />
+    <Content Include="black-tie\scss\_mixins.scss" />
+    <Content Include="black-tie\scss\_path.scss" />
+    <Content Include="black-tie\scss\_rotated-flipped.scss" />
+    <Content Include="black-tie\scss\_sizes.scss" />
+    <Content Include="black-tie\scss\_stacked.scss" />
+    <Content Include="black-tie\scss\_variables.scss" />
+    <Content Include="fonts\flaticons-stroke.eot" />
+    <Content Include="fonts\flaticons-stroke.ttf" />
+    <Content Include="fonts\flaticons-stroke.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\regular\BlackTie-Regular-webfont.eot" />
+    <Content Include="fonts\regular\BlackTie-Regular-webfont.ttf" />
+    <Content Include="fonts\regular\BlackTie-Regular-webfont.woff" />
+    <Content Include="fonts\regular\BlackTie-Regular-webfont.woff2" />
+    <Content Include="fonts\regular\BlackTie-Regular.otf" />
+    <None Include="Properties\PublishProfiles\dev.pubxml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\bootstrap.js" />
@@ -948,6 +1032,7 @@
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.13.0.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\version.json" />
@@ -956,6 +1041,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistrationApiController.cs" />
     <Compile Include="Controllers\VersionController.cs" />
     <Compile Include="Filters\GlobalExceptionFilter.cs" />
@@ -970,6 +1056,16 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_TopAd.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Category.cshtml" />
+    <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Views\Home\Deals.cshtml" />
+    <Content Include="Views\Shared\_MostViewedDeals.cshtml" />
+    <Content Include="Views\Shared\_DealFooter.cshtml" />
+    <Content Include="Views\Shared\_VendorShortProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -981,6 +1077,7 @@
     <Folder Include="app\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DF.Core\DF.Core.csproj">

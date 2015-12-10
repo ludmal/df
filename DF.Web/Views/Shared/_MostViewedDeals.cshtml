@@ -1,0 +1,13 @@
+﻿
+@model List<DF.Domain.ActiveDeal>
+
+<div class="most-viewed">
+
+    <h4>Most Viewed deals</h4>
+    <ul style="list-style-type: none; margin: 0; padding: 0;">
+        @foreach (var item in Model)
+        {
+            <li style="margin-bottom: 10px;"><a href="/deals/@Uri.EscapeDataString(item.DealSlug)">@item.Title</a></li>
+        }
+    </ul>
+</div>

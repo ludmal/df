@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<DF.Domain.ActiveDeal>
+
+<div class="btn-group pull-right" role="group">
+    <button type="button" class="btn btn-info btn-danger">For me</button>
+    <button type="button" class="btn btn-info">Newest</button>
+    <button type="button" class="btn btn-info">Most Viewed</button>
+</div>
+<h2>@ViewBag.Category</h2>
+<br/>
+
+<ul class="deals-ul" style="list-style-type: none; margin: 0; padding: 0;">
+
+    @foreach (var item in Model)
+    {
+        <li class="deal-row">
+            <h2><a href="/deals/@Uri.EscapeDataString(item.DealSlug)">@item.Title</a></h2>
+            <div class="deal-row-desc">
+                @Html.Raw(item.DealDesc)
+            </div>
+    </li>
+    }
+</ul>

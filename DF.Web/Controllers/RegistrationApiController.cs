@@ -9,7 +9,7 @@ using DF.Infrastructure.CQRS;
 
 namespace DF.Web.Controllers
 {
-    [RoutePrefix("api/register")]
+    [System.Web.Http.RoutePrefix("api/register")]
     public class RegistrationApiController : ApiController
     {
         private readonly IQueryDispatcher _queryDispatcher;
@@ -21,7 +21,7 @@ namespace DF.Web.Controllers
             _commandDispatcher = commandDispatcher;
         }
 
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         public IHttpActionResult Register(RegisterNewUserCommand command)
         {
             this._commandDispatcher.Dispatch(command);
