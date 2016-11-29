@@ -1,13 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "Deals";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model DF.Web.Controllers.DealModel
 <h2>@ViewBag.DealTitle</h2>
-<div class="timestamp">
-    Added on 12th Dec
-</div>
+
 <div class="row">
     <div class="col-md-8">
         <div class="deal-box">
@@ -18,7 +15,7 @@
 
     </div>
     <div class="col-md-4">
-        @Html.Partial("_VendorShortProfile")
+        @*@Html.Partial("_VendorShortProfile")*@
         @Html.Partial("_MostViewedDeals", @Model.DealList)
     </div>
 </div>

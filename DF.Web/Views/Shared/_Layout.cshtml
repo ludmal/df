@@ -1,4 +1,5 @@
 ﻿@using System.Web.Optimization
+@using System.Web.UI.WebControls
 
 @{
     Layout = null;
@@ -9,7 +10,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/styles")
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
 </head>
@@ -33,14 +34,7 @@
 <div class="sub-head">
     <div class="sub-content">
         <h1>One site for all the deals.</h1>
-        <div class="main-search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
-                <span class="input-group-btn">
-                        <button class="btn btn-success" type="button">Search</button>
-                    </span>
-            </div>
-        </div>
+        @Html.Partial("_Search")
     </div>
 </div>
     <div class="spacer"></div>
@@ -71,5 +65,24 @@
     </div>
     @Html.Partial("_Footer")
     @Scripts.Render("~/scripts/g")
+<script>
+    function search() {
+        window.location = '/search/' + encodeURIComponent($('#search_text').val());
+    }
+
+    $(document).ready(function() {
+        $(document).keypress(function(e) {
+            if (e.which == 13) {
+                $("#btnSearch").click();
+            }
+        });
+
+    });
+
+</script>
+
+    <script type="text/javascript">var switchTo5x = true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({ publisher: "2fab054b-6cc5-4a49-9806-2e84a0babb25", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>
 </body>
 </html>

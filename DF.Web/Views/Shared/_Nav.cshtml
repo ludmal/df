@@ -32,7 +32,14 @@
             <li><a href="/partners/star-points">Star Points</a></li>
         </ul>
     </li>
-    <li><a href="../navbar/">Register</a></li>
-    <li><a href="../navbar/">Login</a></li>
-    <li><a href="../navbar/">&nbsp;&nbsp;</a></li>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <li><a href="/home/register">Register</a></li>
+        <li><a href="/home/login/">Login</a></li>
+    }
+    @if (User.Identity.IsAuthenticated)
+    {
+        <li><a href="#">@User.Identity.Name</a></li>
+        <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+    }
 </ul>

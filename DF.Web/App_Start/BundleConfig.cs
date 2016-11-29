@@ -30,7 +30,9 @@ namespace DF.Web
                     "~/Scripts/angular-sanitize.js",
                     "~/Scripts/angular-ui-router.js",
                     "~/Scripts/bootstrap.js",
-                    "~/Scripts/ui-bootstrap-tpls-0.13.0.js"
+                    "~/Scripts/ui-bootstrap-tpls-0.13.0.js",
+                    "~/Scripts/jquery.validate.min.js",
+                      "~/Scripts/jquery.validate.unobtrusive.js"
                 )
                 );
         }

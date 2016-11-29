@@ -5,12 +5,12 @@
 @model List<DF.Domain.ActiveDeal>
 
 @*<div class="btn-group pull-right" role="group">
-    <button type="button" class="btn btn-info btn-danger">For me</button>
-    <button type="button" class="btn btn-info">Newest</button>
-    <button type="button" class="btn btn-info">Most Viewed</button>
-</div>*@
+        <button type="button" class="btn btn-info btn-danger">For me</button>
+        <button type="button" class="btn btn-info">Newest</button>
+        <button type="button" class="btn btn-info">Most Viewed</button>
+    </div>*@
 <h2>@ViewBag.Category</h2>
-<br/>
+<br />
 
 <ul class="deals-ul" style="list-style-type: none; margin: 0; padding: 0;">
 
@@ -21,6 +21,6 @@
             <div class="deal-row-desc">
                 @Html.Raw(item.DealDesc)
             </div>
-    </li>
+        </li>
     }
 </ul>

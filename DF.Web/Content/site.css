@@ -388,3 +388,7 @@ ul {
 .orange {
     color: #F39C12;
 }
+
+.form-control {
+    width: 300px;
+}

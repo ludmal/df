@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Deals\ActiveDeal.cs" />
     <Compile Include="Deals\Class1.cs" />
+    <Compile Include="Deals\DealContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registrations\RegisterationsContext.cs" />
     <Compile Include="Registrations\RegisterNewUserCommand.cs" />
