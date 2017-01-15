@@ -185,6 +185,7 @@
     <Content Include="app\core\notification.service.js" />
     <Content Include="app\core\root.controller.js" />
     <Content Include="app\core\util.service.js" />
+    <Content Include="app\home\home.controller.js" />
     <Content Include="app\modules.js" />
     <Content Include="black-tie\css\black-tie.css" />
     <Content Include="black-tie\css\black-tie.min.css" />
@@ -1126,6 +1127,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\category\" />
+    <Folder Include="app\deals\" />
+    <Folder Include="app\partners\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="NewFolder1\" />

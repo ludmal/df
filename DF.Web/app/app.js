@@ -10,6 +10,10 @@
         'rzModule',
         'uiGmapgoogle-maps',
         //'ngMap',
-        'core.module'
+        'core.module',
+        'home.module',
+        'category.module',
+        'partners.module',
+        'deals.module'
     ]);
 })();
