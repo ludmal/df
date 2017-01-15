@@ -7,21 +7,21 @@ namespace DF.Web
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            //routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute("Category", "category/{cat}", new {controller = "Home", action = "Category"}
-                );
+            //routes.MapRoute("Category", "category/{cat}", new {controller = "Home", action = "Category"}
+            //    );
 
-            routes.MapRoute("Partners", "partners/{slug}", new {controller = "Home", action = "Partners"}
-                );
+            //routes.MapRoute("Partners", "partners/{slug}", new {controller = "Home", action = "Partners"}
+            //    );
 
-            routes.MapRoute("Search", "search/{keyword}", new {controller = "Home", action = "Search"}
-                );
-            routes.MapRoute("Deals", "deals/{slug}", new {controller = "Home", action = "Deals"}
-                );
+            //routes.MapRoute("Search", "search/{keyword}", new {controller = "Home", action = "Search"}
+            //    );
+            //routes.MapRoute("Deals", "deals/{slug}", new {controller = "Home", action = "Deals"}
+            //    );
 
             routes.MapRoute("Default", "{controller}/{action}/{id}",
-                new {controller = "Home", action = "Index", id = UrlParameter.Optional}
+                new {controller = "Home", action = "Main", id = UrlParameter.Optional}
                 );
         }
     }

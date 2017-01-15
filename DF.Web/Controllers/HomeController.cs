@@ -35,6 +35,11 @@ namespace DF.Web.Controllers
             return View();
         }
 
+        public ActionResult Main()
+        {
+            return View();
+        }
+
         public ActionResult Category(string cat)
         {
             ViewBag.Category = cat.Humanize(LetterCasing.Title);
