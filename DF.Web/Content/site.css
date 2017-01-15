@@ -22,7 +22,7 @@
 }
 
 .spacer {
-    height: 130px;
+    height:98px;
 }
 .sub-content {
     color: #fff;
@@ -113,6 +113,17 @@ h3 {
 }
 
 .deal-cat-box {
+    text-align: center;
+    width: 240px;
+    height: 240px;
+        display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.deal-cat-box1 {
     text-align: center;
     width: 240px;
     height: 240px;

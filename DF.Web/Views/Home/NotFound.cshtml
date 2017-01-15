@@ -12,8 +12,26 @@
 
     @foreach (var item in Model)
     {
-        <li class="deal-row">
+        @*<li class="deal-row">
             <h2><a href="/deals/@Uri.EscapeDataString(item.DealSlug)">@item.Title</a></h2>
+            <div class="deal-row-desc">
+                @Html.Raw(item.DealDesc)
+            </div>
+        </li>*@
+        <li class="deal-row">
+            @if (item.DealSlug != null)
+                {
+                <h2>
+                    <a href="/deals/@Uri.EscapeDataString(item.DealSlug)">@item.Title</a>
+                </h2>
+            }
+            else
+            {
+                <h2>
+                    <a href="">@item.Title</a>
+                </h2>
+            }
+
             <div class="deal-row-desc">
                 @Html.Raw(item.DealDesc)
             </div>

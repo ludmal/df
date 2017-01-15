@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -9,6 +10,19 @@ using Humanizer;
 
 namespace DF.Web.Controllers
 {
+    public static class StringExt
+    {
+        public static bool IsValidEmail(this string str)
+        {
+            if (string.IsNullOrEmpty(str))
+            {
+                return false;
+            }
+
+            return new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").IsMatch(str);
+        }
+    }
+
     public class DealModel
     {
         public ActiveDeal Deal { get; set; }
@@ -39,13 +53,20 @@ namespace DF.Web.Controllers
             }
         }
 
-        public ActionResult Search(string keyword)
+        [HttpGet]
+        public ActionResult Search(string q)
         {
-            ViewBag.Category = string.Format("Search for: {0}", keyword);
+            var query = HttpUtility.UrlDecode(q);//Request.QueryString["q"];
+            if (string.IsNullOrEmpty(query))
+            {
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.Category = string.Format("Search for: {0}", query);
             ViewBag.Title = ViewBag.Category;
             using (var db = new DealContext())
             {
-                var deals = db.ActiveDeals.Where(x => x.Title.Contains(keyword)).ToList();
+                var deals = db.ActiveDeals.Where(x => x.Title.Contains(query)).ToList();
                 return View(deals);
             }
         }
@@ -86,6 +107,26 @@ namespace DF.Web.Controllers
         [HttpPost]
         public ActionResult Register(RegisterModel model)
         {
+            if (!model.Username.IsValidEmail())
+            {
+                ModelState.AddModelError(string.Empty, "Invalid email address!");
+                return View();//"Register");
+            }
+
+
+            if (string.IsNullOrEmpty(model.Name))
+            {
+                ModelState.AddModelError(string.Empty, "Please enter a name!");
+                return View();//RedirectToAction("Register");
+            }
+
+
+            if (string.IsNullOrEmpty(model.Password) || model.Password.Length < 6)
+            {
+                ModelState.AddModelError(string.Empty, "Password must be at least 6 charachters long!");
+                return View();//RedirectToAction("Register");
+            }
+
             using (var db = new DealContext())
             {
                 var user =
@@ -94,7 +135,7 @@ namespace DF.Web.Controllers
                 if (user != null)
                 {
                     ModelState.AddModelError(string.Empty, "User email already registerd!");
-                    return RedirectToAction("Register");
+                    return View();//RedirectToAction("Register");
                 }
                 
                 var u = new DfUser();

@@ -35,6 +35,23 @@ namespace DF.Web
                       "~/Scripts/jquery.validate.unobtrusive.js"
                 )
                 );
+
+            bundles.Add(new ScriptBundle("~/scripts/app")
+              .Include(
+                  "~/app/app.js",
+                  "~/app/modules.js",
+                  "~/app/config/auth.interceptor.js",
+                  "~/app/config/http.interceptor.js",
+                  "~/app/config/config.dev.js"
+              )
+              );
+
+            bundles.Add(new ScriptBundle("~/scripts/modules")
+                .Include(
+                    "~/app/core/*.js"
+                ));
+
+            System.Web.Optimization.BundleTable.EnableOptimizations = false;
         }
     }
 }
