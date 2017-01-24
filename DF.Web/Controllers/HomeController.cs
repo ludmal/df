@@ -23,17 +23,33 @@ namespace DF.Web.Controllers
         }
     }
 
-    public class DealModel
-    {
-        public ActiveDeal Deal { get; set; }
-        public List<ActiveDeal> DealList { get; set; }
-    }
+    //public class DealModel
+    //{
+    //    public ActiveDeal Deal { get; set; }
+    //    public List<ActiveDeal> DealList { get; set; }
+    //}
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
             return View();
         }
+
+        public ActionResult Main()
+        {
+            return View();
+        }
+
+        public ActionResult HomeMain()
+        {
+            return View();
+        }
+
+        public ActionResult Landing()
+        {
+            return View();
+        }
+
 
         public ActionResult Category(string cat)
         {
@@ -86,7 +102,7 @@ namespace DF.Web.Controllers
                         x => x.Username.ToLower() == model.Username.ToLower() && x.Password == model.Password);
                 if (user != null)
                 {
-                    FormsAuthentication.SetAuthCookie(model.Username, false);
+                    FormsAuthentication.SetAuthCookie($"{user.FirstName} {user.LastName}", false);
                     return Redirect("/");
                 }
                 ModelState.AddModelError(string.Empty, "Invalid Login");

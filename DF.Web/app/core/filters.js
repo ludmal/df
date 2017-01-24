@@ -21,6 +21,7 @@
                 };
             }
         ])
+        .filter('unsafe', function($sce) { return $sce.trustAsHtml; })
         .filter('localDate', [
             '$filter', 'Settings',
             function (filter, Settings) {

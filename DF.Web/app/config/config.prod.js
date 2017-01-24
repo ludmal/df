@@ -7,7 +7,7 @@
             }
         ])
         .run([
-            'AuthService', '$rootScope', 'localStorageService', 'notify', function (AuthService, $rootScope, localStorageService, notify) {
+            '$rootScope', function ($rootScope) {
             }
         ]);
 })();

@@ -1,6 +1,7 @@
 ﻿body {
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: 'Roboto', Helvetica Neue,Helvetica,Arial,sans-serif;
     background-color: #EDEFED; 
+
 }
 
 .main-head {
@@ -76,6 +77,7 @@
 }
 .container {
     padding: 30px;
+    padding-top: 15px;
 }
 
 .top-ad-bkg {
@@ -121,6 +123,7 @@ h3 {
     color: #fff;
     font-size: 24px;
     font-weight: bold;
+    border-radius: 3px;
 }
 
 .deal-cat-box1 {
@@ -137,6 +140,7 @@ h3 {
 .dining {
     background: url(../images/dining.jpg);
     background-size: cover;
+    background-position-y: -70px;
 }
 
 .spa {
@@ -164,7 +168,7 @@ h3 {
 }
 
 .other {
-    background: url(../images/other.jpg);
+    background: url(../images/tech.jpg);
     background-size: cover;
 
 }
@@ -300,6 +304,8 @@ footer ul li a:link { color: #fff; }
     background-color: #fff;
     padding: 20px;
     margin-bottom: 15px;
+
+
 }
 
 .deal-row-desc {
@@ -313,6 +319,7 @@ footer ul li a:link { color: #fff; }
 .deal-box {
     padding: 20px;
     background-color: #fff;
+
 }
 
 .most-viewed {
@@ -403,3 +410,104 @@ ul {
 .form-control {
     width: 300px;
 }
+
+.dealrow {
+    height: 100px; text-align: center; padding: 40px; font-weight: bold; font-size: 22px;color: #fff;
+    margin-bottom: 20px;
+}
+.text-search {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+  
+}
+
+.btn-search {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #E74C3C;
+    
+}
+
+.inner-text {
+    background-color: #2ECC71; text-align: left; color: #fff; bottom: 0; position: absolute;width: 240px;
+    padding: 20px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.inner-text h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.inner-text h2 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+}
+
+.color-pink {
+    background-color: #A900FF;
+}
+
+.color-orange {
+    background-color: #FF6F42;
+}
+
+.color-bl {
+    background-color: #00ABC0;
+}
+
+.color-blue {
+    background-color: #1D87E4;
+}
+
+.color-red {
+    background-color: #E53935;
+}
+
+.color-yellow {
+    background-color: #F8A724;
+}
+
+
+
+.load-div {
+    background-color: rgba(0, 0, 0, 0);
+    bottom: 0;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000005;
+}
+
+    .load-div .icon {
+        margin-right: 15px;
+    }
+
+    .load-div .text {
+        -ms-border-radius: 5px;
+        -ms-opacity: 0.7;
+        background-color: #000;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        margin: auto;
+        margin-top: 20%;
+        opacity: 0.7;
+        padding: 20px;
+        width: 170px;
+    }
+
+
+    hr {
+        border-top: solid 1px #ccc;
+    }

@@ -175,6 +175,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\category\deals.controller.js" />
+    <Content Include="app\category\category.controller.js" />
+    <Content Include="app\category\routes.js" />
     <Content Include="app\config\auth.interceptor.js" />
     <Content Include="app\config\config.dev.js" />
     <Content Include="app\config\config.prod.js" />
@@ -185,8 +188,18 @@
     <Content Include="app\core\notification.service.js" />
     <Content Include="app\core\root.controller.js" />
     <Content Include="app\core\util.service.js" />
+    <Content Include="app\deals\deal.service.js" />
+    <Content Include="app\deals\deals.controller.js" />
+    <Content Include="app\deals\deal.controller.js" />
+    <Content Include="app\deals\routes.js" />
+    <Content Include="app\directives\deal-row.html" />
+    <Content Include="app\directives\deal.js" />
     <Content Include="app\home\home.controller.js" />
+    <Content Include="app\home\routes.js" />
     <Content Include="app\modules.js" />
+    <Content Include="app\partners\partners.controller.js" />
+    <Content Include="app\partners\deals.controller.js" />
+    <Content Include="app\partners\routes.js" />
     <Content Include="black-tie\css\black-tie.css" />
     <Content Include="black-tie\css\black-tie.min.css" />
     <Content Include="black-tie\documentation\assets\css\prettify.css" />
@@ -203,6 +216,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\loading-bar.css" />
     <Content Include="Content\site.css" />
     <Content Include="fonts\flaticons-stroke.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -226,6 +240,7 @@
     <Content Include="images\other.jpg" />
     <Content Include="images\pizza.jpg" />
     <Content Include="images\spa.jpg" />
+    <Content Include="images\tech.jpg" />
     <Content Include="images\travel.jpg" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -1068,6 +1083,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\loading-bar.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.13.0.js" />
     <Content Include="Web.config">
@@ -1080,8 +1096,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\DealsApiController.cs" />
+    <Compile Include="Controllers\DealsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartnersController.cs" />
     <Compile Include="Controllers\RegistrationApiController.cs" />
+    <Compile Include="Controllers\ScriptsController.cs" />
     <Compile Include="Controllers\VersionController.cs" />
     <Compile Include="Filters\GlobalExceptionFilter.cs" />
     <Compile Include="Filters\ModelValidationFilter.cs" />
@@ -1118,6 +1139,16 @@
     <Content Include="Views\Home\NotFound.cshtml" />
     <Content Include="Views\Shared\_SpaLayout.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\Home\HomeMain.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Deals.cshtml" />
+    <Content Include="Views\Partners\Index.cshtml" />
+    <Content Include="Views\Partners\Deals.cshtml" />
+    <Content Include="Views\Deals\Index.cshtml" />
+    <Content Include="Views\Deals\Deal.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Landing.cshtml" />
+    <Content Include="Views\Shared\_LandingLayout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1127,12 +1158,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\category\" />
-    <Folder Include="app\deals\" />
-    <Folder Include="app\partners\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="NewFolder1\" />
+    <Folder Include="Views\Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DF.Core\DF.Core.csproj">

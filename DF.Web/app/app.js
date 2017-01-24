@@ -4,12 +4,11 @@
 
     angular.module('app', [
         'ngResource',
+        'ngSanitize',
         'ngCookies',
         'ui.router',
         'ui.bootstrap',
-        'rzModule',
-        'uiGmapgoogle-maps',
-        //'ngMap',
+        'angular-loading-bar',
         'core.module',
         'home.module',
         'category.module',

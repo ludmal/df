@@ -10,7 +10,7 @@
 
     function HomeController($scope, $rootScope, $window, $http, Settings, $location, UtilService) {
 
-        $scope.title = 'hey';
+        $scope.title = 'hey this is home';
     };
 
 })();

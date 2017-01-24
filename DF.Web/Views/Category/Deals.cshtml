@@ -1,0 +1,16 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div ng-controller="DealsCatController">
+    <br/>
+    <h2 style="text-transform: capitalize;">{{ category }}</h2>
+    <br/>
+    <h3 ng-hide="list.length">Come back for more!</h3>
+    <ul class="deals-ul" style="list-style-type: none; margin: 0; padding: 0;">
+        <li class="deal-row" ng-repeat="item in list">
+            <deal-row data="item"></deal-row>
+        </li>
+    </ul>
+</div>
