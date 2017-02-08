@@ -6,9 +6,9 @@
         .module('core.module')
         .factory('AuthService', AuthService);
 
-    AuthService.$inject = ['$rootScope', '$http', '$q', 'localStorageService', 'Settings'];
+    AuthService.$inject = ['$rootScope', '$http', '$q', 'Settings'];
 
-    function AuthService($rootScope, $http, $q, localStorageService, Settings) {
+    function AuthService($rootScope, $http, $q, Settings) {
         var srv = {};
 
         var authDataKey = 'authData';

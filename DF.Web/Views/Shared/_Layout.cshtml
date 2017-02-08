@@ -56,9 +56,9 @@
         </div>
         <div class="hidden-lg hidden-md hidden-sm" style="padding: 30px">
             <div class="input-group">
-                <input type="text" class="form-control" id="search_text" style="font-size: 20px; padding: 20px" placeholder="Search for...">
+                <input type="text" class="form-control" id="search_text1" style="font-size: 20px; padding: 20px" placeholder="Search for...">
                 <span class="input-group-btn">
-                    <button class="btn btn-success" id="btnSearch1" type="button" onclick="search()">Search</button>
+                    <button class="btn btn-danger btn-search" id="btnSearch1" type="button" onclick="search1()">Search</button>
                 </span>
             </div>
         </div>
@@ -66,7 +66,7 @@
 
 </div>
     <div class="spacer"></div>
-<div class="cat-menu">
+<div class="cat-menu hidden-sm hidden-xs">
     <div class="container cat-menu">
         <ul class="nav nav-tabs head-nav">
             <li class="@(@ViewBag.Category == "top" ? "head-tab-active" : "")"><a href="/#/category/top">Top Deals</a></li>
@@ -81,7 +81,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="/#/category/home-essentials">Home Essentials</a></li>
                     <li><a href="/#/category/electronics">Electronics</a></li>
-                    <li><a href="/#/category/other">Other</a></li>
+                    @*<li><a href="/#/category/other">Other</a></li>*@
                 </ul>
             </li>
             
@@ -100,6 +100,14 @@
         }
 
         window.location = '/home/search?q=' + encodeURIComponent($('#search_text').val());
+    }
+
+    function search1() {
+        if ($('#search_text1').val() === '') {
+            return;
+        }
+
+        window.location = '/home/search?q=' + encodeURIComponent($('#search_text1').val());
     }
 
     $(document).ready(function() {

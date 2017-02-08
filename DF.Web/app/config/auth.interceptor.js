@@ -6,30 +6,20 @@
         .module('core.module')
         .factory('AuthInterceptor', AuthInterceptor);
 
-    AuthInterceptor.$inject = ['$q', '$injector', '$window', 'localStorageService'];
+    AuthInterceptor.$inject = ['$q', '$injector', '$window'];
 
-    function AuthInterceptor($q, $injector, $window, localStorageService) {
+    function AuthInterceptor($q, $injector, $window) {
         var srv = {};
 
         srv.request = function(config) {
 
             config.headers = config.headers || {};
-            var authData = localStorageService.get('authData');
-
-            if (authData) {
-                config.headers.Authorization = 'Bearer ' + authData.token;
-            }
+           
             return config;
         }
 
         srv.responseError = function (rejection) {
             var notify = $injector.get('notify');
-
-            if (rejection.status === 401) {
-                var authService = $injector.get('AuthService');
-                authService.logout();
-                $window.location.href = '/unauthorized';
-            }
 
             if (rejection.status === 400) {
 
@@ -59,8 +49,8 @@
             }
 
             if (rejection.status === 406 || rejection.status === 500) {
-                var messageTemplate = '<span>' + rejection.data.ExceptionMessage + '</span>';
-                console.log('message', rejection.data.ExceptionMessage);
+                var messageTemplate = '<span>' + rejection.data.Message + '</span>';
+                console.log('message', rejection.data.Message);
                 notify({
                     messageTemplate: messageTemplate,
                     classes: 'err'

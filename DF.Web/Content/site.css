@@ -9,7 +9,7 @@
     background-size: cover;
     height: 350px;
     top: 0;
-    width: 100%;
+    width: 50%;
     position: absolute;
 }
 
@@ -18,6 +18,7 @@
     background-size: cover;
     height: 200px;
     top: 0;
+    background-position-y: -400px;
     width: 100%;
     position: absolute;
 }
@@ -408,7 +409,16 @@ ul {
 }
 
 .form-control {
-    width: 300px;
+}
+
+.fade.ng-hide {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+.nothing {
+    padding: 40px;
+    font-size: 24px;
 }
 
 .dealrow {
@@ -418,12 +428,11 @@ ul {
 .text-search {
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-  
 }
 
 .btn-search {
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
     background-color: #E74C3C;
     
 }
@@ -507,7 +516,61 @@ ul {
         width: 170px;
     }
 
+    .form-control {
+        border-radius: 2px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        box-shadow: none;
+        font-size: 18px;
+    }
 
+    .lbl-info {
+        font-size: 12px;
+        color: #888;
+        padding-top: 5px;
+    }
+
+    h4 {
+        font-weight: bold;
+        font-size: 20px;
+    }
     hr {
         border-top: solid 1px #ccc;
+    }
+
+    .form-label {
+        margin-bottom: 10px;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .sel-box {
+        width: 100px;
+        height: 100px;
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        border: 1px solid #f7f7f7;
+        cursor: pointer;
+         -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    }
+
+      .sel-box1 {
+         -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+    }
+    
+    .btn-large {
+        padding: 40px;
+        font-size: 18px;
+    }
+
+    .ddl {
+        padding: 10px;
+        width: 100%;
+        font-size: 16px;
     }

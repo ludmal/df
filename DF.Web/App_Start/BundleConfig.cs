@@ -16,6 +16,7 @@ namespace DF.Web
                     "~/Content/bootstrap.css",
                       "~/Content/loading-bar.css",
                     "~/black-tie/css/black-tie.css",
+                    "~/Content/notify.css",
                     "~/Content/site.css"
                 )
                 );
@@ -26,6 +27,7 @@ namespace DF.Web
                     "~/Scripts/jquery-1.9.1.min.js",
                     "~/Scripts/angular.js",
                     "~/Scripts/angular-touch.js",
+                    "~/Scripts/angular-animate.js",
                     "~/Scripts/angular-cookies.js",
                     "~/Scripts/angular-resource.js",
                     "~/Scripts/angular-sanitize.js",
@@ -34,6 +36,7 @@ namespace DF.Web
                     "~/Scripts/bootstrap.js",
                     "~/Scripts/ui-bootstrap-tpls-0.13.0.js",
                     "~/Scripts/jquery.validate.min.js",
+                    "~/Scripts/angular-notify.js",
                       "~/Scripts/jquery.validate.unobtrusive.js"
                 )
                 );
@@ -58,7 +61,7 @@ namespace DF.Web
                     "~/app/deals/*.js"
                 ));
 
-            System.Web.Optimization.BundleTable.EnableOptimizations = false;
+            System.Web.Optimization.BundleTable.EnableOptimizations = true;
         }
     }
 }

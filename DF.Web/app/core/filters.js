@@ -21,6 +21,15 @@
                 };
             }
         ])
+        .filter('humanizeConstant', function () {
+            return function (text) {
+                if (text) {
+                    var string = text.split("-").join(" ").toLowerCase();
+                    string = string.charAt(0).toUpperCase() + string.slice(1);
+                    return string;
+                };
+            };
+        })
         .filter('unsafe', function($sce) { return $sce.trustAsHtml; })
         .filter('localDate', [
             '$filter', 'Settings',

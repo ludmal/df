@@ -7,10 +7,23 @@
     <br/>
     <h2 style="text-transform: capitalize;">{{ category }}</h2>
     <br/>
-    <h3 ng-hide="list.length">Come back for more!</h3>
+    <h3 ng-hide="!loaded || list.length">@Html.Partial("_Nothing")</h3>
     <ul class="deals-ul" style="list-style-type: none; margin: 0; padding: 0;">
         <li class="deal-row" ng-repeat="item in list">
             <deal-row data="item"></deal-row>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div style="cursor: pointer" ng-hide="checkFav(item.Id)">
+                    <a ng-click="addFav(item.Id)" style="cursor: hand"><i class="fa fa-star-o orange"></i>&nbsp;&nbsp;Add to Favourites</a>
+                </div>
+                <div class="label label-success" ng-show="checkFav(item.Id)">
+                    <i class="fa fa-check"></i>&nbsp;Added to favourites.
+                </div>
+            }
+
         </li>
     </ul>
+    <div ng-show="list.length">
+        @Html.Partial("_Top")
+    </div>
 </div>

@@ -21,13 +21,20 @@
             return $http.get(url);
         };
 
+        srv.addFav = function (dealId) {
+            var url = Settings.ApiUrl + 'deals/fav';
+            return $http.post(url, {
+                DealId: dealId
+            });
+        };
+
         srv.dealsByPartner = function (partner) {
             var url = Settings.ApiUrl + 'deals/partners/' + partner;
             return $http.get(url);
         };
 
 
-        
+
 
         return srv;
     };

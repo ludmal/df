@@ -50,6 +50,21 @@ namespace DF.Web.Controllers
             return View();
         }
 
+        public ActionResult RegisterNew()
+        {
+            return View();
+        }
+
+        public ActionResult Fav()
+        {
+            return View();
+        }
+
+
+        public ActionResult UserProfile()
+        {
+            return View();
+        }
 
         public ActionResult Category(string cat)
         {
@@ -102,7 +117,10 @@ namespace DF.Web.Controllers
                         x => x.Username.ToLower() == model.Username.ToLower() && x.Password == model.Password);
                 if (user != null)
                 {
-                    FormsAuthentication.SetAuthCookie($"{user.FirstName} {user.LastName}", false);
+                    //FormsAuthentication.SetAuthCookie($"{user.FirstName} {user.LastName}", false);
+                    FormsAuthentication.SetAuthCookie(model.Username, false);
+                    Session["USERNAME"] = $"{user.FirstName} {user.LastName}";
+
                     return Redirect("/");
                 }
                 ModelState.AddModelError(string.Empty, "Invalid Login");
@@ -130,12 +148,17 @@ namespace DF.Web.Controllers
             }
 
 
-            if (string.IsNullOrEmpty(model.Name))
+            if (string.IsNullOrEmpty(model.FirstName))
             {
-                ModelState.AddModelError(string.Empty, "Please enter a name!");
+                ModelState.AddModelError(string.Empty, "Please enter a First name!");
                 return View();//RedirectToAction("Register");
             }
 
+            if (string.IsNullOrEmpty(model.LastName))
+            {
+                ModelState.AddModelError(string.Empty, "Please enter a Last name!");
+                return View();//RedirectToAction("Register");
+            }
 
             if (string.IsNullOrEmpty(model.Password) || model.Password.Length < 6)
             {
@@ -157,15 +180,15 @@ namespace DF.Web.Controllers
                 var u = new DfUser();
                 u.Username = model.Username;
                 u.Password = model.Password;
-                u.FirstName = model.Name;
-                u.LastName = "";
+                u.FirstName = model.FirstName;
+                u.LastName = model.LastName;
                 u.UserEmail = model.Username;
-                u.AuthCode = "";
+                u.AuthCode = model.AuthCode;
                 u.Title = "";
                 u.CityId = 0;
-                u.MobileNo = "";
-                u.AgeGroup = "";
-                u.UserGender = "";
+                u.MobileNo = model.Mobile;
+                u.AgeGroup = model.AgeGroup;
+                u.UserGender = model.UserGender;
                 u.DateCreated = DateTime.UtcNow;
                 u.UserActive = true;
                 db.Users.Add(u);
@@ -179,7 +202,7 @@ namespace DF.Web.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index");
+            return Redirect("/");
         }
 
         public ActionResult Register()
@@ -236,18 +259,30 @@ namespace DF.Web.Controllers
         }
     }
 
+    public class SessionHelper
+    {
+        public static string GetUser()
+        {
+            return HttpContext.Current.Session["USERNAME"] as string ?? "";
+        }
+    }
+
     public class LoginModel
     {
         public string Username { get; set; }
         public string Password { get; set; }
-
     }
 
     public class RegisterModel
     {
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Name { get; set; }
-
+        public string UserGender { get; set; }
+        public string AgeGroup { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string AuthCode { get; set; }
+        public string Title { get; set; }
+        public string Mobile { get; set; }
     }
 }

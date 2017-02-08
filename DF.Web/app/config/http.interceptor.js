@@ -6,9 +6,9 @@
         .module('core.module')
         .factory('HttpInterceptor', HttpInterceptor);
 
-    HttpInterceptor.$inject = ['$q', '$rootScope', '$window', '$injector', 'localStorageService'];
+    HttpInterceptor.$inject = ['$q', '$rootScope', '$window', '$injector'];
 
-    function HttpInterceptor($q, $rootScope, $window, $injector, localStorageService) {
+    function HttpInterceptor($q, $rootScope, $window, $injector) {
         return {
             // On reques
             request: function (config) {
@@ -54,8 +54,8 @@
                 }
 
                 if (rejection.status === 406) {
-                    var messageTemplate = '<span>' + rejection.data.ExceptionMessage + '</span>';
-                    console.log('message', rejection.data.ExceptionMessage);
+                    var messageTemplate = '<span>' + rejection.data.Message + '</span>';
+                    console.log('message', rejection.data.Message);
                     notify({
                         messageTemplate: messageTemplate,
                         classes: 'app-error'
@@ -63,7 +63,7 @@
                 }
 
                 if (rejection.status === 500) {
-                    var msg = '<span>' + rejection.data.ExceptionMessage + '</span>';
+                    var msg = '<span>' + rejection.data.Message + '</span>';
                     notify({
                         messageTemplate: msg
                     });

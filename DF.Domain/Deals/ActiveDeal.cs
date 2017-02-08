@@ -17,6 +17,26 @@ namespace DF.Domain
 
     }
 
+    [Table("vw_fav")]
+    public class FavDeals
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string Email { get; set; }
+        public string DealDesc { get; set; }
+        public DateTime AddedDate { get; set; }
+        public string DealSlug { get; set; }
+
+    }
+
+    [Table("Favs")]
+    public class FavDeal
+    {
+        public int Id { get; set; }
+        public string Email { get; set; }
+        public int DealId { get; set; }
+    }
+
     [Table("VW_PartnerDeals")]
     public class PartnerDeals
     {

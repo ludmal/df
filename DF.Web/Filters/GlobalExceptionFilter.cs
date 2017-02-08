@@ -17,7 +17,7 @@ namespace DF.Web.Filters
         public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
             var message = actionExecutedContext.Exception;
-            var httpError = new HttpError(string.Format("{0}- Details: {1}", message.Message, message.InnerException != null ? message.InnerException.Message : ""));
+            var httpError = new HttpError(message.Message);
             var errorResponse = actionExecutedContext.Request.CreateErrorResponse(HttpStatusCode.InternalServerError, httpError);
             throw new HttpResponseException(errorResponse);
         }

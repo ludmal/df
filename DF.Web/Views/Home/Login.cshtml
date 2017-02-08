@@ -5,7 +5,7 @@
 }
 
 <h2>Login</h2>
-
+<br/>
 @model DF.Web.Controllers.LoginModel
 
 <div class="deal-box">
@@ -17,7 +17,6 @@
             @Html.LabelFor(m => m.Username)
             <p>
                 @Html.TextBoxFor(m => m.Username, new { @class = "form-control title" })
-
             </p>
         </div>
 
@@ -28,7 +27,7 @@
 
             </p>
         </div>
-        <button type="submit" class="btn btn-success">Login</button>
-
+        <button type="submit" class="btn btn-success" style="padding: 20px 40px; font-size: 18px;">Login</button>
+        <div class="lbl-info">Don't have an account? Please <a href="/#/register">register</a> with us.</div>
     }
 </div>

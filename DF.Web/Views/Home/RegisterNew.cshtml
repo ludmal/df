@@ -1,0 +1,107 @@
+﻿
+@{
+    Layout = null;
+}
+
+<h1>User Registration</h1>
+<br />
+
+<div class="panel container" ng-controller="RegisterController">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-label">Email</div>
+            <div>
+                <input type="email" class="form-control" placeholder="Email" ng-model="model.Username"/>
+            </div>
+            <div class="lbl-info">This will be your username.</div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-label">Password</div>
+            <div>
+                <input type="password" class="form-control" placeholder="Password" ng-model="model.Password"/>
+            </div>
+        </div>
+    </div>
+    <hr style="border-top:1px solid #f7f7f7 "/>
+    <h4>We need some additional info</h4>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-label">Title</div>
+            <div>
+                <select class="ddl" ng-model="model.Title">
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Dr">Dr</option>
+                    <option value="Prof">Prof</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-label">First Name</div>
+            <div>
+                <input type="text" class="form-control" placeholder="First name" ng-model="model.FirstName"/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-label">Last Name</div>
+            <div>
+                <input type="text" class="form-control" placeholder="Last name" ng-model="model.LastName"/>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-label">Mobile</div>
+            <div>
+                <input type="text" class="form-control" placeholder="Mobile number" ng-model="model.Mobile" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-label">Gender</div>
+            <div>
+                <select name="multipleSelect" class="ddl" ng-model="model.UserGender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-label">Age Group</div>
+            <div>
+                <select name="multipleSelect" class="ddl" ng-model="model.AgeGroup">
+                    <option value="20">20</option>
+                    <option value="20-30">20-30</option>
+                    <option value="30-40">30-40</option>
+                    <option value="40-50">40-50</option>
+                    <option value="50+">50+</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <h4>Tell us what your interests are</h4>
+    <div>
+        <table >
+            <tr>
+                <td style="padding: 5px;">
+                    <div class="sel-box dining" ng-class="{'sel-box1' : check('dining') }" ng-click="add('dining')">Dining</div>
+                </td>
+                <td style="padding: 5px;"><div class="sel-box acco" ng-class="{'sel-box1' : check('accomodation')}" ng-click="add('accomodation')">Accomodation</div></td>
+                <td style="padding: 5px;"><div class="sel-box travel" ng-class="{'sel-box1' : check('travel')}" ng-click="add('travel')">Travel & Leisure</div></td>
+                <td style="padding: 5px;"><div class="sel-box happyhour" ng-class="{'sel-box1' : check('happyhour') }" ng-click="add('happyhour')">Happy Hour</div></td>
+                <td style="padding: 5px;"><div class="sel-box fashion" ng-class="{'sel-box1' : check('fashion')}" ng-click="add('fashion')">Fashion</div></td>
+                <td style="padding: 5px;"><div class="sel-box spa" ng-class="{'sel-box1' : check('spa')}" ng-click="add('spa')">Helath & Beauty</div></td>
+                <td style="padding: 5px;"><div class="sel-box other" ng-class="{'sel-box1' : check('electronics')}" ng-click="add('electronics')">Electronics</div></td>
+                <td style="padding: 5px;"><div class="sel-box home" ng-class="{'sel-box1' : check('homeessentials')}" ng-click="add('homeessentials')">Home Essentials</div></td>
+            </tr>
+        </table>
+    </div>
+    <div class="lbl-info">Knowing your interests will help us to get you better deals.</div>
+    <br/>
+    <div class="form-label">
+        <input type="checkbox" ng-model="agreed"/>&nbsp;&nbsp;By registering to this service I agree to DealFinder <a href="~/home/disclaimer" target="_blank">Terms & Conditions</a> and to recieve emails.
+    </div>
+    <button class="btn btn-success btn-large" ng-disabled="!agreed" ng-click="register()" style="padding: 20px 40px; font-size: 18px;">Register Me</button>
+</div>

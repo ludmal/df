@@ -16,119 +16,133 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body ng-app="app" ng-cloak ng-controller="RootController">
-    <nav class="navbar navbar-inverse hidden-lg hidden-md hidden-sm">
-        <div>
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+    <div style="top:0">
+        <nav class="navbar navbar-inverse hidden-lg hidden-md hidden-sm">
+            <div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    @Html.Partial("_Nav")
+                </div><!--/.nav-collapse -->
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                @Html.Partial("_Nav")
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
-    <nav class="navbar navbar-default hidden-xs">
-        <div>
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/#/"><img src="~/images/logo.png" style="padding: 10px" /></a>
+        </nav>
+        <nav class="navbar navbar-default hidden-xs">
+            <div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/#/"><img src="~/images/logo.png" style="padding: 10px" /></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    @Html.Partial("_Nav")
+                </div><!--/.nav-collapse -->
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                @Html.Partial("_Nav")
-            </div><!--/.nav-collapse -->
-        </div>
-    </nav>
-    <div class="sub-head">
-        <div class="sub-content" style="padding-top: 10px;">
-            <a href="/#/"><img src="~/images/logo.png" class="hidden-lg hidden-sm hidden-md" style="position: absolute; top: -30px; left: 0;z-index: 9999999999999999" /></a>
-            <h1 class="hidden-sm hidden-xs">One site for all the deals.</h1>
-            <div style="font-size: 20px; padding-top: 10px;color:#fff" class="hidden-lg hidden-md">One site for all the deals.</div>
-            <div class="hidden-xs">
-                @Html.Partial("_Search")
-            </div>
-            <div class="hidden-lg hidden-md hidden-sm" style="padding: 30px">
-                <div class="input-group">
-                    <input type="text" class="form-control" id="search_text" style="font-size: 20px; padding: 20px" placeholder="Search for...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" id="btnSearch1" type="button" onclick="search()">Search</button>
-                    </span>
+        </nav>
+        <div class="sub-head">
+            <div class="sub-content" style="padding-top: 10px;">
+                <a href="/#/"><img src="~/images/logo.png" class="hidden-lg hidden-sm hidden-md" style="position: absolute; top: -30px; left: 0; z-index: 9999999999999999" /></a>
+                <h1 class="hidden-sm hidden-xs">One site for all the deals.</h1>
+                <div style="font-size: 20px; padding-top: 10px; color: #fff" class="hidden-lg hidden-md">One site for all the deals.</div>
+                <div class="hidden-xs">
+                    @Html.Partial("_Search")
+                </div>
+                <div class="hidden-lg hidden-md hidden-sm" style="padding: 30px">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="search_text1" style="font-size: 20px; padding: 20px" placeholder="Search for...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-danger btn-search" id="btnSearch1" type="button" onclick="search1()">Search</button>
+                        </span>
+                    </div>
                 </div>
             </div>
+
         </div>
-
-    </div>
-    <div class="spacer"></div>
-    <div class="cat-menu  hidden-xs hidden-sm">
-        <div class="container cat-menu">
-            <ul class="nav nav-tabs head-nav">
-                <li class="@(@ViewBag.Category == "top" ? "head-tab-active" : "")"><a href="/#/category/top">Top Deals</a></li>
-                <li class="@(@ViewBag.Category == "dining" ? "head-tab-active" : "")"><a href="/#/category/dining">Dining</a></li>
-                <li class="@(@ViewBag.Category == "happy-hour" ? "head-tab-active" : "")"><a href="/#/category/happy-hour">Happy Hour</a></li>
-                <li class="@(@ViewBag.Category == "accomodation" ? "head-tab-active" : "")"><a href="/#/category/accomodation">Accomodation</a></li>
-                <li class="@(@ViewBag.Category == "health-beauty" ? "head-tab-active" : "")"><a href="/#/category/health-beauty">Health & Beauty</a></li>
-                <li class="@(@ViewBag.Category == "travel-leisure" ? "head-tab-active" : "")"><a href="/#/category/travel-leisure">Travel & Leisure</a></li>
-                <li class="@(@ViewBag.Category == "fashion" ? "head-tab-active" : "")"><a href="/#/category/fashion">Fashion</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<i class="btr bt-angle-down nav-icon"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/#/category/home-essentials">Home Essentials</a></li>
-                        <li><a href="/#/category/electronics">Electronics</a></li>
-                        <li><a href="/#/category/other">Other</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-    <div class="container page">
-        @RenderBody()
-    </div>
-    <div id="load-div" class="load-div">
-        <div class="text">
-            <i class="fa fa-circle-o-notch fa-spin icon"></i>Loading...
-        </div>
-    </div>
-    @Html.Partial("_Footer")
-
-
-    @Scripts.Render("~/scripts/g")
-    @Scripts.Render("~/scripts/app")
-    <script type="text/javascript" src="@Url.Action("Constants", "Scripts")"></script>
-    @Scripts.Render("~/scripts/modules")
-
-    <script>
-        function search() {
-            if ($('#search_text').val() === '') {
-                return;
+        <div class="spacer"></div>
+        <div class="cat-menu  hidden-xs hidden-sm">
+            <div class="container cat-menu">
+                <ul class="nav nav-tabs head-nav">
+                    @if (User.Identity.IsAuthenticated)
+            {
+                        <li><a href="/#/fav"><i class="fa fa-star orange"></i>&nbsp;&nbsp;Favourites</a></li>
             }
+                    <li class="@(@ViewBag.Category == "top" ? "head-tab-active" : "")"><a href="/#/category/top">Top Deals</a></li>
+                    <li class="@(@ViewBag.Category == "dining" ? "head-tab-active" : "")"><a href="/#/category/dining">Dining</a></li>
+                    <li class="@(@ViewBag.Category == "happy-hour" ? "head-tab-active" : "")"><a href="/#/category/happy-hour">Happy Hour</a></li>
+                    <li class="@(@ViewBag.Category == "accomodation" ? "head-tab-active" : "")"><a href="/#/category/accomodation">Accomodation</a></li>
+                    <li class="@(@ViewBag.Category == "health-beauty" ? "head-tab-active" : "")"><a href="/#/category/health-beauty">Health & Beauty</a></li>
+                    <li class="@(@ViewBag.Category == "travel-leisure" ? "head-tab-active" : "")"><a href="/#/category/travel-leisure">Travel & Leisure</a></li>
+                    <li class="@(@ViewBag.Category == "fashion" ? "head-tab-active" : "")"><a href="/#/category/fashion">Fashion</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<i class="btr bt-angle-down nav-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/#/category/home-essentials">Home Essentials</a></li>
+                            <li><a href="/#/category/electronics">Electronics</a></li>
+                            @*<li><a href="/#/category/other">Other</a></li>*@
+                        </ul>
+                    </li>
 
-            window.location = '/home/search?q=' + encodeURIComponent($('#search_text').val());
+                </ul>
+            </div>
+        </div>
+    </div>
+<div class="container page">
+    @RenderBody()
+</div>
+<div id="load-div" class="load-div">
+    <div class="text">
+        <i class="fa fa-circle-o-notch fa-spin icon"></i>Loading...
+    </div>
+</div>
+@Html.Partial("_Footer")
+
+
+@Scripts.Render("~/scripts/g")
+@Scripts.Render("~/scripts/app")
+<script type="text/javascript" src="@Url.Action("Constants", "Scripts")"></script>
+@Scripts.Render("~/scripts/modules")
+
+<script>
+    function search() {
+        if ($('#search_text').val() === '') {
+            return;
         }
 
-        $(document).ready(function () {
-            $(document).keypress(function (e) {
-                if (e.which == 13) {
-                    $("#btnSearch").click();
-                }
-            });
+        window.location = '/home/search?q=' + encodeURIComponent($('#search_text').val());
+    }
 
-            $(document).keypress(function (e) {
-                if (e.which == 13) {
-                    $("#btnSearch1").click();
-                }
-            });
+    function search1() {
+        if ($('#search_text1').val() === '') {
+            return;
+        }
+
+        window.location = '/home/search?q=' + encodeURIComponent($('#search_text1').val());
+    }
+
+    $(document).ready(function() {
+        $(document).keypress(function(e) {
+            if (e.which == 13) {
+                $("#btnSearch").click();
+            }
         });
 
-    </script>
+        $(document).keypress(function(e) {
+            if (e.which == 13) {
+                $("#btnSearch1").click();
+            }
+        });
+    });
+
+</script>
 <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -146,9 +160,9 @@
     ga('send', 'pageview');
 
 </script>
-    <script type="text/javascript">var switchTo5x = true;</script>
-    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-    <script type="text/javascript">stLight.options({ publisher: "2fab054b-6cc5-4a49-9806-2e84a0babb25", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>
+<script type="text/javascript">var switchTo5x = true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({ publisher: "2fab054b-6cc5-4a49-9806-2e84a0babb25", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>
 
 </body>
 </html>

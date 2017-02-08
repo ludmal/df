@@ -3,7 +3,9 @@
         .config([
             'cfpLoadingBarProvider', '$httpProvider', '$provide', function (cfpLoadingBarProvider, $httpProvider, $provide) {
                 cfpLoadingBarProvider.includeSpinner = false;
-                $httpProvider.defaults.cache = true;
+                $httpProvider.defaults.cache = false;
+                $httpProvider.interceptors.push('HttpInterceptor');
+
             }
         ])
         .run([

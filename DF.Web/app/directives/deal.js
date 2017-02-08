@@ -5,18 +5,21 @@
         .directive('dealRow', [
             function () {
                 var controller = [
-                    '$scope', '$http', function ($scope, $http) {
+                    '$scope', '$http', 'DealService','notify', function ($scope, $http, DealService, notify) {
 
                         function init() {
                         }
 
                         init();
+                        
+                        
                     }
                 ];
                 return {
                     restrict: 'E',
                     scope: {
-                        "data": "="
+                        "data": "=",
+                        "fav": "="
                     },
                     replace: false,
                     controller: controller,

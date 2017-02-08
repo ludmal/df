@@ -12,11 +12,14 @@
 
         $scope.category = $stateParams.slug;
         $scope.list = [];
+        $scope.loaded = false;
 
         $scope.init = function () {
             DealService.dealsByCategory($scope.category).then(function (response) {
                 console.log(response);
                 $scope.list = response.data;
+                $scope.loaded = true;
+
             });
         };
 
